@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berat Bircan — Ben kurdum. Sen büyüt.</title>
+<meta name="description" content="Girişimin en zor kısmı başlamaktır. Domain, ödeme altyapısı, web sitesi, sosyal medya, ilk müşteri — bunları ben hallettim.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;--bg2:#f8f8f7;--bg3:#f2f2f0;
+  --border:rgba(0,0,0,0.08);--borderh:rgba(0,0,0,0.16);
+  --t:#0f0f0e;--t2:#555551;--t3:#999994;
+  --ibg:#e6f1fb;--it:#0c447c;--ib:rgba(23,95,165,0.3);
+  --wbg:#faeeda;--wt:#633806;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,sans-serif;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#0f0f0e;--bg2:#18181c;--bg3:#111113;
+  --border:rgba(255,255,255,0.08);--borderh:rgba(255,255,255,0.18);
+  --t:#f0ede6;--t2:#a09d96;--t3:#666660;
+  --ibg:#042c53;--it:#b5d4f4;--ib:rgba(53,138,221,0.35);
+  --wbg:#412402;--wt:#fac775;
+}}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg3);color:var(--t);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 40px;background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky;top:0;z-index:100}
+.logo{font-family:var(--serif);font-size:17px;color:var(--t);letter-spacing:-0.3px}
+.nav-r{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:22px}
+.nav-links a{font-size:13px;color:var(--t2);transition:color .15s}
+.nav-links a:hover{color:var(--t)}
+.lang{display:flex;background:var(--bg2);border-radius:20px;border:0.5px solid var(--border);overflow:hidden}
+.lb{font-size:11px;padding:4px 10px;cursor:pointer;border:none;background:transparent;font-family:var(--sans);color:var(--t3);transition:all .15s}
+.lb.on{background:var(--t);color:var(--bg);border-radius:20px}
+
+.hero{padding:48px 40px 40px;background:var(--bg);border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:1fr 200px;gap:40px;align-items:center}
+.hero h1{font-family:var(--serif);font-size:52px;font-weight:400;line-height:1.1;color:var(--t);letter-spacing:-1.2px;margin-bottom:10px}
+.hero h1 em{font-style:italic;color:var(--t2)}
+.hsub{font-size:16px;font-weight:500;color:var(--t2);margin-bottom:14px}
+.hdesc{font-size:14px;color:var(--t2);line-height:1.75;max-width:540px;margin-bottom:28px}
+.hbtns{display:flex;gap:10px}
+.bp{font-size:13px;font-weight:500;padding:10px 20px;background:var(--t);color:var(--bg);border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);display:inline-block;transition:opacity .15s}
+.bp:hover{opacity:.85}
+.bg{font-size:13px;padding:10px 20px;background:transparent;color:var(--t2);border-radius:8px;border:0.5px solid var(--borderh);cursor:pointer;font-family:var(--sans);display:inline-block;transition:color .15s}
+.bg:hover{color:var(--t)}
+.hero-video-wrap{display:flex;align-items:center;justify-content:center;height:100%}
+.hero-video{border-radius:12px;overflow:hidden;aspect-ratio:9/16;border:0.5px solid var(--border);width:180px}
+.hero-video iframe{width:100%;height:100%;border:none;display:block}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-video-wrap{display:none}}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--border);gap:0.5px;border-bottom:0.5px solid var(--border)}
+.stat{background:var(--bg);padding:18px 40px}
+.sn{font-family:var(--serif);font-size:28px;color:var(--t);line-height:1;margin-bottom:4px}
+.sl{font-size:11px;color:var(--t3)}
+
+.sec{padding:28px 40px;background:var(--bg);border-bottom:0.5px solid var(--border)}
+.stitle{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--t3);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+
+.card{background:var(--bg);border:0.5px solid var(--border);border-radius:12px;padding:20px;display:flex;flex-direction:column;transition:border-color .15s}
+.card:hover{border-color:var(--borderh)}
+.card-sale{border:1px solid var(--ib)}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.cl{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;flex-shrink:0}
+.lct{background:#E1F5EE;color:#085041}
+.lem{background:#FAEEDA;color:#633806}
+@media(prefers-color-scheme:dark){.lct{background:#085041;color:#9FE1CB}.lem{background:#412402;color:#FAC775}}
+.cn{font-size:14px;font-weight:500;color:var(--t);letter-spacing:-0.2px}
+.cd{font-size:12.5px;color:var(--t2);line-height:1.55;margin-bottom:12px}
+.cm{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;flex:1}
+.cmr{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t3)}
+.cmr svg{width:13px;height:13px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cf{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:0.5px solid var(--border)}
+.cft{display:flex;justify-content:space-between;align-items:center}
+.badge{font-size:11px;padding:3px 9px;border-radius:20px}
+.bc{background:var(--wbg);color:var(--wt)}
+.bs{background:var(--ibg);color:var(--it)}
+.cp{font-size:15px;font-weight:500;color:var(--t)}
+.cls{display:flex;gap:7px}
+.cl2{flex:1;font-size:12px;padding:8px 0;background:transparent;color:var(--t2);border-radius:7px;border:0.5px solid var(--borderh);cursor:pointer;font-family:var(--sans);text-align:center;display:flex;align-items:center;justify-content:center;gap:4px;transition:color .15s}
+.cl2:hover{color:var(--t)}
+.cl2 svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.clb{flex:1;font-size:12px;font-weight:500;padding:8px 0;background:var(--t);color:var(--bg);border-radius:7px;border:none;cursor:pointer;font-family:var(--sans);text-align:center;transition:opacity .15s;display:block}
+.clb:hover{opacity:.85}
+
+.about{padding:24px 40px;background:var(--bg);border-bottom:0.5px solid var(--border)}
+.ai{border:0.5px solid var(--border);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start}
+.av{width:40px;height:40px;border-radius:50%;background:var(--bg2);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:15px;color:var(--t2)}
+.at p{font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:12px}
+.als{display:flex;gap:14px}
+.al{font-size:12px;color:var(--t3);display:flex;align-items:center;gap:5px;transition:color .15s}
+.al:hover{color:var(--t2)}
+.al svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+footer{padding:14px 40px;background:var(--bg);border-top:0.5px solid var(--border);display:flex;justify-content:space-between}
+footer span{font-size:12px;color:var(--t3)}
+
+@media(max-width:768px){
+  nav,footer{padding-left:20px;padding-right:20px}
+  .nav-links{display:none}
+  .hero{padding:32px 20px 28px}
+  .hero h1{font-size:36px}
+  .stat{padding:14px 20px}
+  .sec,.about{padding:20px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">Berat Bircan</span>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="#girisimler" id="n1">Girişimler</a>
+      <a href="#hakkimda" id="n2">Hakkımda</a>
+      <a href="mailto:beratbircan1616@gmail.com" id="n3">İletişim</a>
+    </div>
+    <div class="lang">
+      <button class="lb on" id="btr" onclick="setLang('tr')">TR</button>
+      <button class="lb" id="ben" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <h1 id="ht">Ben kurdum.<br><em>Sen büyüt.</em></h1>
+    <p class="hsub" id="hs">Çalışan ürün, ilk müşteri, hazır altyapı</p>
+    <p class="hdesc" id="hd">Girişimin en zor kısmı başlamaktır. Domain, ödeme altyapısı, web sitesi, sosyal medya, ilk müşteri — bunları ben hallettim. Buradaki her ürün büyümeye hazır, sadece doğru kişiyi bekliyor.</p>
+    <div class="hbtns">
+      <a href="#girisimler" class="bp" id="hb1">Girişimlere göz at</a>
+      <a href="mailto:beratbircan1616@gmail.com" class="bg" id="hb2">İletişime geç</a>
+    </div>
+  </div>
+  <div class="hero-video-wrap">
+    <div class="hero-video">
+      <iframe src="https://www.youtube.com/embed/_h409w9KKjk?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="sn">2</div><div class="sl" id="s1">Aktif girişim</div></div>
+  <div class="stat"><div class="sn">₺45K</div><div class="sl" id="s2">Başlangıç fiyatı</div></div>
+  <div class="stat"><div class="sn">5 yıl</div><div class="sl" id="s3">En eski girişim</div></div>
+</div>
+
+<div class="sec" id="girisimler">
+  <div class="stitle" id="st">Girişimler</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="ch"><div class="cl lct">CT</div><div class="cn">Cambel Tekstil</div></div>
+      <div class="cd" id="c1d">Bebek giyim markanıza özel koleksiyonlar yaratın.</div>
+      <div class="cm">
+        <div class="cmr"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span id="c1m1">5 yıldır aktif</span></div>
+        <div class="cmr"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span id="c1m2">Yıllık 5M₺ ciro</span></div>
+        <div class="cmr"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span id="c1m3">Ödeme altyapısı hazır</span></div>
+        <div class="cmr"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span id="c1m4">Domain & sosyal medya dahil</span></div>
+      </div>
+      <div class="cf">
+        <div class="cft"><span class="badge bc" id="c1b">Fiyat için yaz</span></div>
+        <div class="cls">
+          <a href="https://cambeltekstil.com" target="_blank" class="cl2"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span id="c1s">Siteye git</span></a>
+          <a href="mailto:beratbircan1616@gmail.com?subject=Cambel%20Tekstil%20hakk%C4%B1nda" class="cl2" id="c1ml"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span id="c1m">İletişime geç</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sale">
+      <div class="ch"><div class="cl lem">EM</div><div class="cn">Emarkan</div></div>
+      <div class="cd" id="c2d">Tekstil markaları için uçtan uca tedarik zinciri çözümü.</div>
+      <div class="cm">
+        <div class="cmr"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span id="c2m1">İlk müşteriye hazır</span></div>
+        <div class="cmr"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span id="c2m2">Ödeme altyapısı hazır</span></div>
+        <div class="cmr"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span id="c2m3">Domain & sosyal medya dahil</span></div>
+      </div>
+      <div class="cf">
+        <div class="cft"><span class="badge bs" id="c2b">Satılık</span><span class="cp">₺45.000</span></div>
+        <div class="cls">
+          <a href="https://emarkan.com.tr" target="_blank" class="cl2"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span id="c2s">Siteye git</span></a>
+          <a href="mailto:beratbircan1616@gmail.com?subject=Emarkan%20sat%C4%B1n%20almak%20istiyorum" class="clb" id="c2bl"><span id="c2buy">Hemen satın al</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="about" id="hakkimda">
+  <div class="ai">
+    <div class="av">BB</div>
+    <div class="at">
+      <p id="abt">Girişim kurmayı seviyorum — fikri alıp çalışan bir ürüne, çalışan ürünü ilk gelire dönüştürmek benim işim. O noktadan sonra devrediyorum. Buradaki her ürün bu süreçten geçti.</p>
+      <div class="als">
+        <a href="mailto:beratbircan1616@gmail.com" class="al"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span id="ae">E-posta</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Berat Bircan</span>
+  <span>beratbircan.com</span>
+</footer>
+
+<script>
+const T={
+  tr:{nav:['Girişimler','Hakkımda','İletişim'],ht:'Ben kurdum.<br><em>Sen büyüt.</em>',hs:'Çalışan ürün, ilk müşteri, hazır altyapı',hd:'Girişimin en zor kısmı başlamaktır. Domain, ödeme altyapısı, web sitesi, sosyal medya, ilk müşteri — bunları ben hallettim. Buradaki her ürün büyümeye hazır, sadece doğru kişiyi bekliyor.',hb1:'Girişimlere göz at',hb2:'İletişime geç',s:['Aktif girişim','Başlangıç fiyatı','En eski girişim'],st:'Girişimler',c1d:'Bebek giyim markanıza özel koleksiyonlar yaratın.',c1m:['5 yıldır aktif','Yıllık 5M₺ ciro','Ödeme altyapısı hazır','Domain & sosyal medya dahil'],c1b:'Fiyat için yaz',c1s:'Siteye git',c1ml:'İletişime geç',c1ms:'Cambel%20Tekstil%20hakk%C4%B1nda',c2d:'Tekstil markaları için uçtan uca tedarik zinciri çözümü.',c2m:['İlk müşteriye hazır','Ödeme altyapısı hazır','Domain & sosyal medya dahil'],c2b:'Satılık',c2s:'Siteye git',c2buy:'Hemen satın al',c2ms:'Emarkan%20sat%C4%B1n%20almak%20istiyorum',abt:'Girişim kurmayı seviyorum — fikri alıp çalışan bir ürüne, çalışan ürünü ilk gelire dönüştürmek benim işim. O noktadan sonra devrediyorum. Buradaki her ürün bu süreçten geçti.',ae:'E-posta'},
+  en:{nav:['Ventures','About','Contact'],ht:'I built it.<br><em>You grow it.</em>',hs:'Working product, first customer, ready infrastructure',hd:'The hardest part of a startup is starting. Domain, payment system, website, social media, first customer — I took care of all of it. Every product here is ready to grow, just waiting for the right person.',hb1:'Browse ventures',hb2:'Get in touch',s:['Active ventures','Starting price','Oldest venture'],st:'Ventures',c1d:'Create custom collections for your baby clothing brand.',c1m:['Active for 5 years','₺5M annual revenue','Payment system ready','Domain & social media included'],c1b:'Ask for price',c1s:'Visit site',c1ml:'Get in touch',c1ms:'About%20Cambel%20Tekstil',c2d:'End-to-end supply chain solution for textile brands.',c2m:['Ready for first customer','Payment system ready','Domain & social media included'],c2b:'For sale',c2s:'Visit site',c2buy:'Buy now',c2ms:'I%20want%20to%20buy%20Emarkan',abt:'I love building startups — turning ideas into working products, and working products into first revenue. After that, I hand them off. Every product here has gone through that process.',ae:'Email'}
+};
+function setLang(l){
+  const d=T[l];
+  document.getElementById('btr').className='lb'+(l==='tr'?' on':'');
+  document.getElementById('ben').className='lb'+(l==='en'?' on':'');
+  ['n1','n2','n3'].forEach((id,i)=>document.getElementById(id).textContent=d.nav[i]);
+  document.getElementById('ht').innerHTML=d.ht;
+  document.getElementById('hs').textContent=d.hs;
+  document.getElementById('hd').textContent=d.hd;
+  document.getElementById('hb1').textContent=d.hb1;
+  document.getElementById('hb2').textContent=d.hb2;
+  ['s1','s2','s3'].forEach((id,i)=>document.getElementById(id).textContent=d.s[i]);
+  document.getElementById('st').textContent=d.st;
+  document.getElementById('c1d').textContent=d.c1d;
+  ['c1m1','c1m2','c1m3','c1m4'].forEach((id,i)=>document.getElementById(id).textContent=d.c1m[i]);
+  document.getElementById('c1b').textContent=d.c1b;
+  document.getElementById('c1s').textContent=d.c1s;
+  document.getElementById('c1m').textContent=d.c1ml;
+  document.getElementById('c1ml').href=`mailto:beratbircan1616@gmail.com?subject=${d.c1ms}`;
+  document.getElementById('c2d').textContent=d.c2d;
+  ['c2m1','c2m2','c2m3'].forEach((id,i)=>document.getElementById(id).textContent=d.c2m[i]);
+  document.getElementById('c2b').textContent=d.c2b;
+  document.getElementById('c2s').textContent=d.c2s;
+  document.getElementById('c2buy').textContent=d.c2buy;
+  document.getElementById('c2bl').href=`mailto:beratbircan1616@gmail.com?subject=${d.c2ms}`;
+  document.getElementById('abt').textContent=d.abt;
+  document.getElementById('ae').textContent=d.ae;
+}
+</script>
+</body>
+</html>
